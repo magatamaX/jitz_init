@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="実務家Link.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <!-- OGP-->
+    <!-- /OGP-->
+    <title>実務家Link.com</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script type="text/javascript" src="/scripts/script.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="top">
+        <div class="top-contents">
+          <p class="top-desc">法務・税務・労務のプロと企業を結ぶポータルサイト</p>
+          <ul class="top-sitenavi">
+            <li><a href="#">本サイトについて</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#">サイトマップ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-contents">
+        <h1><a href="/"><img src="/images/common/main_title.png" alt="実務家Link.com"></a></h1>
+        <div class="search">
+          <form>
+            <input type="text" placeholder="記事を検索">
+            <label class="search-icon" for="search_button">
+              <input type="button" id="search_button">
+            </label>
+          </form>
+        </div>
+        <nav id="page-navi">
+          <ul>
+            <li><a href="#">法務</a></li>
+            <li><a href="#">税務</a></li>
+            <li><a href="#">労務</a></li>
+            <li><a href="#">スキル</a></li>
+            <li><a href="#">ビジネス</a></li>
+            <li><a href="#">基礎知識</a></li>
+            <li><a href="#">専門家コラム</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="clearfix" id="contents">
+      <!-- メインコンテンツ-->
+      <div class="main-contents">
+        <main role="main">
+          <section id="main-slide">
+            <div class="main-slide-area">
+              <ul class="slides clearfix">
+                <li><a href="#"><img src="/images/top/slides_01.jpg" alt="「ランニング命！」が挫折の根本要因？"><span>「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと</span></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/730x425/cc00cc/fff/?text=slide02" alt="「ランニング命！」が挫折の根本要因？"><span>「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと</span></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/730x425/a2e6fb/fff/?text=slide03" alt="「ランニング命！」が挫折の根本要因？"><span>「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと</span></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/730x425/ffc8e2/fff/?text=slide04" alt="「ランニング命！」が挫折の根本要因？"><span>「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと</span></a></li>
+                <li><a href="#"><img src="http://via.placeholder.com/730x425/e2ffc8/fff/?text=slide05" alt="「ランニング命！」が挫折の根本要因？"><span>「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと</span></a></li>
+              </ul>
+            </div>
+          </section>
+          <section id="recommend">
+            <h2>おすすめ</h2>
+            <ul class="recommend-articles">
+              <li><a href="#"><img src="http://via.placeholder.com/230x173/ff8585/fff/?text=recm01" alt=""><span>金銭トラブルを防ぐ「借用証（借用書）」「念書」の書き方</span></a></li>
+              <li><a href="#"><img src="http://via.placeholder.com/230x173/ff8585/fff/?text=recm02" alt=""><span>「億り人」になる最後の決め手は、知識でも初期資金量</span></a></li>
+              <li><a href="#"><img src="http://via.placeholder.com/230x173/ff8585/fff/?text=recm03" alt=""><span>元銀座No.1ホステスが教える「また会いたい」のはこんな人</span></a></li>
+              <li><a href="#"><img src="http://via.placeholder.com/230x173/ff8585/fff/?text=recm04" alt=""><span>「バイトリーダー」そんな学生が「無い内定」なわけ</span></a></li>
+              <li><a href="#"><img src="http://via.placeholder.com/230x173/ff8585/fff/?text=recm05" alt=""><span>あっと驚く―手を打ち出すラテラル・シンキングって何だ？</span></a></li>
+              <li><a href="#"><img src="http://via.placeholder.com/230x173/ff8585/fff/?text=recm06" alt=""><span>「直感主義者」のマジック・ワードが社会問題をつくり出す</span></a></li>
+            </ul>
+          </section>
+          <section id="new">
+            <h2>新着記事</h2>
+            <ul class="new-articles">
+              <li><a href="#">
+                  <div class="new-article-image"><img src="http://via.placeholder.com/230x173/00aba9/fff/?text=atc01" alt=""></div>
+                  <div class="new-article-introduction">
+                    <p class="new-article-icon"><span class="houmu">法務</span><span class="business">ビジネス</span></p>
+                    <h3 class="new-article-title">もう50歳？ まだ50歳？ 悩める50代のためのライフプランニング</h3>
+                    <p class="new-article-aside"><span class="date">2017.06.25</span><span class="series">50歳からのキャリアプランニング 第10回</span><span class="series-option">（最終回）</span></p>
+                    <p class="new-article-description">50代って若いのでしょうか？ それともシニアなのでしょうか？ 筆者が学生だった1970年代、企業の定年は55歳（！）でした。50代は現役生活とリタイア生活の両方を味わう世代だったのです。なんと女性ならば…</p>
+                  </div></a></li>
+              <li><a href="#">
+                  <div class="new-article-image"><img src="http://via.placeholder.com/230x173/00aba9/fff/?text=atc02" alt=""></div>
+                  <div class="new-article-introduction">
+                    <p class="new-article-icon"><span class="houmu">法務</span><span class="business">ビジネス</span></p>
+                    <h3 class="new-article-title">もう50歳？ まだ50歳？ 悩める50代のためのライフプランニング</h3>
+                    <p class="new-article-aside"><span class="date">2017.06.25</span><span class="series">50歳からのキャリアプランニング 第10回</span><span class="series-option">（最終回）</span></p>
+                    <p class="new-article-description">50代って若いのでしょうか？ それともシニアなのでしょうか？ 筆者が学生だった1970年代、企業の定年は55歳（！）でした。50代は現役生活とリタイア生活の両方を味わう世代だったのです。なんと女性ならば…</p>
+                  </div></a></li>
+              <li><a href="#">
+                  <div class="new-article-image"><img src="http://via.placeholder.com/230x173/00aba9/fff/?text=atc03" alt=""></div>
+                  <div class="new-article-introduction">
+                    <p class="new-article-icon"><span class="houmu">法務</span><span class="business">ビジネス</span></p>
+                    <h3 class="new-article-title">もう50歳？ まだ50歳？ 悩める50代のためのライフプランニング</h3>
+                    <p class="new-article-aside"><span class="date">2017.06.25</span><span class="series">50歳からのキャリアプランニング 第10回</span><span class="series-option">（最終回）</span></p>
+                    <p class="new-article-description">50代って若いのでしょうか？ それともシニアなのでしょうか？ 筆者が学生だった1970年代、企業の定年は55歳（！）でした。50代は現役生活とリタイア生活の両方を味わう世代だったのです。なんと女性ならば…</p>
+                  </div></a></li>
+              <li><a href="#">
+                  <div class="new-article-image"><img src="http://via.placeholder.com/230x173/00aba9/fff/?text=atc04" alt=""></div>
+                  <div class="new-article-introduction">
+                    <p class="new-article-icon"><span class="houmu">法務</span><span class="business">ビジネス</span></p>
+                    <h3 class="new-article-title">もう50歳？ まだ50歳？ 悩める50代のためのライフプランニング</h3>
+                    <p class="new-article-aside"><span class="date">2017.06.25</span><span class="series">50歳からのキャリアプランニング 第10回</span><span class="series-option">（最終回）</span></p>
+                    <p class="new-article-description">50代って若いのでしょうか？ それともシニアなのでしょうか？ 筆者が学生だった1970年代、企業の定年は55歳（！）でした。50代は現役生活とリタイア生活の両方を味わう世代だったのです。なんと女性ならば…</p>
+                  </div></a></li>
+              <li><a href="#">
+                  <div class="new-article-image"><img src="http://via.placeholder.com/230x173/00aba9/fff/?text=atc05" alt=""></div>
+                  <div class="new-article-introduction">
+                    <p class="new-article-icon"><span class="houmu">法務</span><span class="business">ビジネス</span></p>
+                    <h3 class="new-article-title">もう50歳？ まだ50歳？ 悩める50代のためのライフプランニング</h3>
+                    <p class="new-article-aside"><span class="date">2017.06.25</span><span class="series">50歳からのキャリアプランニング 第10回</span><span class="series-option">（最終回）</span></p>
+                    <p class="new-article-description">50代って若いのでしょうか？ それともシニアなのでしょうか？ 筆者が学生だった1970年代、企業の定年は55歳（！）でした。50代は現役生活とリタイア生活の両方を味わう世代だったのです。なんと女性ならば…</p>
+                  </div></a></li>
+              <li><a href="#">
+                  <div class="new-article-image"><img src="http://via.placeholder.com/230x173/00aba9/fff/?text=atc06" alt=""></div>
+                  <div class="new-article-introduction">
+                    <p class="new-article-icon"><span class="houmu">法務</span><span class="business">ビジネス</span></p>
+                    <h3 class="new-article-title">もう50歳？ まだ50歳？ 悩める50代のためのライフプランニング</h3>
+                    <p class="new-article-aside"><span class="date">2017.06.25</span><span class="series">50歳からのキャリアプランニング 第10回</span><span class="series-option">（最終回）</span></p>
+                    <p class="new-article-description">50代って若いのでしょうか？ それともシニアなのでしょうか？ 筆者が学生だった1970年代、企業の定年は55歳（！）でした。50代は現役生活とリタイア生活の両方を味わう世代だったのです。なんと女性ならば…</p>
+                  </div></a></li>
+              <li><a href="#">
+                  <div class="new-article-image"><img src="http://via.placeholder.com/230x173/00aba9/fff/?text=atc07" alt=""></div>
+                  <div class="new-article-introduction">
+                    <p class="new-article-icon"><span class="houmu">法務</span><span class="business">ビジネス</span></p>
+                    <h3 class="new-article-title">もう50歳？ まだ50歳？ 悩める50代のためのライフプランニング</h3>
+                    <p class="new-article-aside"><span class="date">2017.06.25</span><span class="series">50歳からのキャリアプランニング 第10回</span><span class="series-option">（最終回）</span></p>
+                    <p class="new-article-description">50代って若いのでしょうか？ それともシニアなのでしょうか？ 筆者が学生だった1970年代、企業の定年は55歳（！）でした。50代は現役生活とリタイア生活の両方を味わう世代だったのです。なんと女性ならば…</p>
+                  </div></a></li>
+            </ul>
+            <div class="pager">
+              <ul>
+                <li class="current"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li class="next"><a href="#">次へ</a></li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+      <!-- /メインコンテンツ-->
+      <!-- サイドコンテンツ-->
+      <div class="side-contents">
+        <section id="ranking">
+          <h2>人気ランキング</h2>
+          <ol class="ranking-articles">
+            <li><a href="#">
+                <div class="ranking-article-image"><img src="http://via.placeholder.com/100x100/a17164/fff/?text=ranking01" alt=""></div>
+                <div class="ranking-article-introduction">
+                  <p class="ranking-article-icon"><span class="houmu">法務</span></p>
+                  <p class="ranking-article-title">「億り人」になる最後の決め手は、知識でも初期資金量…</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="ranking-article-image"><img src="http://via.placeholder.com/100x100/a17164/fff/?text=ranking02" alt=""></div>
+                <div class="ranking-article-introduction">
+                  <p class="ranking-article-icon"><span class="houmu">法務</span></p>
+                  <p class="ranking-article-title">「億り人」になる最後の決め手は、知識でも初期資金量…</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="ranking-article-image"><img src="http://via.placeholder.com/100x100/a17164/fff/?text=ranking03" alt=""></div>
+                <div class="ranking-article-introduction">
+                  <p class="ranking-article-icon"><span class="houmu">法務</span></p>
+                  <p class="ranking-article-title">「億り人」になる最後の決め手は、知識でも初期資金量…</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="ranking-article-image"><img src="http://via.placeholder.com/100x100/a17164/fff/?text=ranking04" alt=""></div>
+                <div class="ranking-article-introduction">
+                  <p class="ranking-article-icon"><span class="houmu">法務</span></p>
+                  <p class="ranking-article-title">「億り人」になる最後の決め手は、知識でも初期資金量…</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="ranking-article-image"><img src="http://via.placeholder.com/100x100/a17164/fff/?text=ranking05" alt=""></div>
+                <div class="ranking-article-introduction">
+                  <p class="ranking-article-icon"><span class="houmu">法務</span></p>
+                  <p class="ranking-article-title">「億り人」になる最後の決め手は、知識でも初期資金量…</p>
+                </div></a></li>
+          </ol>
+        </section>
+        <section class="ad-area">
+          <p><a href="#"><img src="http://via.placeholder.com/300x250/ccc/fff/?text=Ad" alt=""></a></p>
+        </section>
+        <section class="banner-area">
+          <p class="banner"><a href="#"><img src="http://via.placeholder.com/300x80/666/fff/?text=Bnr01" alt=""></a></p>
+          <p class="banner"><a href="#"><img src="http://via.placeholder.com/300x80/666/fff/?text=Bnr02" alt=""></a></p>
+        </section>
+        <section id="experts">
+          <h2>専門家紹介</h2>
+          <ul>
+            <li><a href="#">
+                <div class="experts-image">
+                  <p><img src="http://via.placeholder.com/80x80/283962/fff/?text=spc01" alt=""></p>
+                </div>
+                <div class="experts-personality">
+                  <p class="experts-category">弁護士</p>
+                  <p class="experts-name">丸山 丸男</p>
+                  <p class="experts-office">（丸川事務所 所属）</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="experts-image">
+                  <p><img src="http://via.placeholder.com/80x80/283962/fff/?text=spc02" alt=""></p>
+                </div>
+                <div class="experts-personality">
+                  <p class="experts-category">弁護士</p>
+                  <p class="experts-name">丸山 丸男</p>
+                  <p class="experts-office">（丸川事務所 所属）</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="experts-image">
+                  <p><img src="http://via.placeholder.com/80x80/283962/fff/?text=spc03" alt=""></p>
+                </div>
+                <div class="experts-personality">
+                  <p class="experts-category">弁護士</p>
+                  <p class="experts-name">丸山 丸男</p>
+                  <p class="experts-office">（丸川事務所 所属）</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="experts-image">
+                  <p><img src="http://via.placeholder.com/80x80/283962/fff/?text=spc04" alt=""></p>
+                </div>
+                <div class="experts-personality">
+                  <p class="experts-category">弁護士</p>
+                  <p class="experts-name">丸山 丸男</p>
+                  <p class="experts-office">（丸川事務所 所属）</p>
+                </div></a></li>
+            <li><a href="#">
+                <div class="experts-image">
+                  <p><img src="http://via.placeholder.com/80x80/283962/fff/?text=spc05" alt=""></p>
+                </div>
+                <div class="experts-personality">
+                  <p class="experts-category">弁護士</p>
+                  <p class="experts-name">丸山 丸男</p>
+                  <p class="experts-office">（丸川事務所 所属）</p>
+                </div></a></li>
+          </ul>
+        </section>
+        <section class="ad-area">
+          <p><a href="#"><img src="http://via.placeholder.com/300x250/ccc/fff/?text=Ad" alt=""></a></p>
+        </section>
+        <section id="twitter">
+          <p>TWITTER_Area</p>
+        </section>
+        <section class="banner-area">
+          <p class="banner"><a href="#"><img src="http://via.placeholder.com/300x80/666/fff/?text=Bnr03" alt=""></a></p>
+        </section>
+      </div>
+    </div>
+    <!-- /contents-->
+    <footer id="footer">
+      <div class="footer-contents">
+        <ul class="bottom-navigation">
+          <li>
+            <dl>
+              <dt>法務</dt>
+              <dd>
+                <ul>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>税務</dt>
+              <dd>
+                <ul>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>労務</dt>
+              <dd>
+                <ul>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>スキル</dt>
+              <dd>
+                <ul>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>ビジネス</dt>
+              <dd>
+                <ul>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>基礎知識</dt>
+              <dd>
+                <ul>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>専門家コラム</dt>
+              <dd>
+                <ul>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                  <li><a href="#">○○○</a></li>
+                </ul>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <div class="bottom-asidenavi">
+          <ul>
+            <li><a href="#">本サイトについて</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="#">サイトマップ</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; 2017 xxxxxxx xxxxx</p>
+      </div>
+    </footer>
+  </body>
+</html>
