@@ -257,7 +257,8 @@ header#header {
               background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, rgba(0, 0, 0, .7)));
               background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .7) 50%); }
     #contents .main-contents #recommend {
-      margin-bottom: 40px; }
+      margin-bottom: 40px;
+      overflow: hidden; }
       #contents .main-contents #recommend h2 {
         line-height: 40px;
         position: relative;
@@ -278,23 +279,32 @@ header#header {
           border-top: 20px solid green;
           border-left: 20px solid green; }
       #contents .main-contents #recommend .recommend-articles {
-        overflow: hidden;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-        width: 100%; }
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-right: -20px;
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr 1fr; }
         #contents .main-contents #recommend .recommend-articles li {
-          width: 230px;
+          margin-right: 20px;
           margin-bottom: 20px; }
+          #contents .main-contents #recommend .recommend-articles li:first-child {
+            -ms-grid-column: 1;
+            -ms-grid-row: 1; }
+          #contents .main-contents #recommend .recommend-articles li:nth-child(2) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 1; }
+          #contents .main-contents #recommend .recommend-articles li:nth-child(3) {
+            -ms-grid-column: 3;
+            -ms-grid-row: 1; }
+          #contents .main-contents #recommend .recommend-articles li:nth-child(4) {
+            -ms-grid-column: 1;
+            -ms-grid-row: 2; }
+          #contents .main-contents #recommend .recommend-articles li:nth-child(5) {
+            -ms-grid-column: 2;
+            -ms-grid-row: 2; }
+          #contents .main-contents #recommend .recommend-articles li:last-child {
+            -ms-grid-column: 3;
+            -ms-grid-row: 2; }
           #contents .main-contents #recommend .recommend-articles li a {
             display: block; }
             #contents .main-contents #recommend .recommend-articles li a:hover img {

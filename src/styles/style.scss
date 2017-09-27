@@ -190,6 +190,7 @@ header{
     }
     #recommend{
       margin-bottom: 40px;
+      overflow: hidden;
       h2{
         line-height: 40px;
         position: relative;
@@ -212,15 +213,45 @@ header{
         }
       }
       .recommend-articles{
-        overflow: hidden;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-right: -20px;
+        // MS-IE対策
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
         li{
-          width: 230px;
+          margin-right: 20px;
           margin-bottom: 20px;
+          &:first-child{
+            //MS-IE対策
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
+          }
+          &:nth-child(2){
+            //MS-IE対策
+            -ms-grid-column: 2;
+            -ms-grid-row: 1;
+          }
+          &:nth-child(3){
+            //MS-IE対策
+            -ms-grid-column: 3;
+            -ms-grid-row: 1;
+          }
+          &:nth-child(4){
+            //MS-IE対策
+            -ms-grid-column: 1;
+            -ms-grid-row: 2;
+          }
+          &:nth-child(5){
+            //MS-IE対策
+            -ms-grid-column: 2;
+            -ms-grid-row: 2;
+          }
+          &:last-child{
+            //MS-IE対策
+            -ms-grid-column: 3;
+            -ms-grid-row: 2;
+          }
           a{
             display: block;
             &:hover{
