@@ -156,6 +156,14 @@ header{
         .slides{
           width: 500%;
           height: auto;
+          animation-name: slider2;
+          animation-duration: 24s;
+          animation-timing-function: cubic-bezier(.2,.1,.2,1);
+          animation-delay: 0s;
+          animation-iteration-count: infinite;
+          animation-direction: normal;
+          animation-fill-mode: forwards;
+          animation-play-state: running;
           li{
             float: left;
             a{
@@ -737,5 +745,66 @@ footer{
         }
       }
     }
+  }
+}
+
+// keyframes
+@keyframes slider1 {
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  15%{
+    transform: translate3d(-20%,0,0);
+  }
+  25%{
+    transform: translate3d(-20%,0,0);
+  }
+  40%{
+    transform: translate3d(-40%,0,0);
+  }
+  50%{
+    transform: translate3d(-40%,0,0);
+  }
+  65%{
+    transform: translate3d(-60%,0,0);
+  }
+  75%{
+    transform: translate3d(-60%,0,0);
+  }
+  90%{
+    transform: translate3d(-80%,0,0);
+  }
+  100%{
+    transform: translate3d(-80%,0,0);
+  }
+}
+
+@keyframes slider2 {
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  20%{
+    transform: translate3d(0,0,0);
+  }
+  25%{
+    transform: translate3d(-20%,0,0);
+  }
+  45%{
+    transform: translate3d(-20%,0,0);
+  }
+  50%{
+    transform: translate3d(-40%,0,0);
+  }
+  70%{
+    transform: translate3d(-40%,0,0);
+  }
+  75%{
+    transform: translate3d(-60%,0,0);
+  }
+  95%{
+    transform: translate3d(-60%,0,0);
+  }
+  100%{
+    transform: translate3d(-80%,0,0);
   }
 }
