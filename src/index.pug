@@ -12,7 +12,6 @@ html(lang="ja")
     title 実務家Link.com
     //- link(rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css")
     link(rel="stylesheet" href="/styles/style.css")
-    script(type="text/javascript", src="/scripts/script.js")
   body
     include inc/_header
     #contents.clearfix
@@ -21,27 +20,33 @@ html(lang="ja")
         main(role="main")
           section#main-slide
             .main-slide-area
-              ul.slides.clearfix
+              ul.slides.active.clearfix
                 li
-                  a(href="#")
+                  a(href="#article01")
                     img(src="/images/top/slides_01.jpg", alt="「ランニング命！」が挫折の根本要因？")
                     span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
                 li
-                  a(href="#")
+                  a(href="#article02")
                     img(src="http://via.placeholder.com/730x425/cc00cc/fff/?text=slide02", alt="「ランニング命！」が挫折の根本要因？")
                     span 「ウォーキング命！」が破滅の根本要因？ 休むウォーカーがやらなくてはいけない8つのこと
                 li
-                  a(href="#")
+                  a(href="#article03")
                     img(src="http://via.placeholder.com/730x425/a2e6fb/fff/?text=slide03", alt="「ランニング命！」が挫折の根本要因？")
-                    span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
+                    span 「リスニング命！」が病気の間接要因？ 寝るリスナーがやってみてもいい2つのこと
                 li
-                  a(href="#")
+                  a(href="#article04")
                     img(src="http://via.placeholder.com/730x425/ffc8e2/fff/?text=slide04", alt="「ランニング命！」が挫折の根本要因？")
                     span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
                 li
-                  a(href="#")
+                  a(href="#article05")
                     img(src="http://via.placeholder.com/730x425/e2ffc8/fff/?text=slide05", alt="「ランニング命！」が挫折の根本要因？")
                     span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
+                  //- .absbox
+                  //-   ul
+                  //-     li
+                  //-       a(href="#")
+                  //-         img(src="/images/top/slides_01.jpg", alt="「ランニング命！」が挫折の根本要因？")
+                  //-         span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
           section#recommend
             h2 おすすめ
             ul.recommend-articles
@@ -306,3 +311,4 @@ html(lang="ja")
               img(src="http://via.placeholder.com/300x80/666/fff/?text=Bnr03", alt="")
     // /contents
     include inc/_footer
+    script(type="text/javascript", src="/scripts/script.js")
