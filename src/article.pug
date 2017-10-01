@@ -4,16 +4,26 @@ html(lang="ja")
     include inc/_meta
     // OGP
     // /OGP
-    title 実務家Link.com
+    title ○○○○○○ | 実務家Link.com
     //- link(rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css")
     link(rel="stylesheet" href="/styles/style.css")
   body
+    // ヘッダー
     include inc/_header
+    // /ヘッダー
+    // パンくず
+    #breadCrumb
+      ul
+        li
+          a(href="") ホーム
+        li
+          a(href="") 法務
+        li.current
+          span 「ランニング命！」が挫折の根本原因？
     #contents.clearfix
       // メインコンテンツ
       .main-contents
-        include inc/index/_main
-      // /メインコンテンツ
+        include inc/article/_main
       // サイドコンテンツ
       .side-contents
         include inc/_side
