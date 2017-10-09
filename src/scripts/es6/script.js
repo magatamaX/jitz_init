@@ -3,8 +3,8 @@
   const elm1 = elm.firstElementChild;
   const elm1Clone = elm1.cloneNode(true);
   const elm5 = elm.lastElementChild;
-  const div = document.createElement('div');
-  div.classList.add('absbox');
-  const absbox = elm5.appendChild(div);
+  const ul = document.createElement('ul');
+  ul.classList.add('absbox');
+  const absbox = elm5.appendChild(ul);
   absbox.appendChild(elm1Clone);
 })();
