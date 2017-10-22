@@ -252,27 +252,25 @@ header{
             // animation-direction: normal;
             // animation-fill-mode: forwards;
             // animation-play-state: running;
+            transform: translate3d(0,0,0);
             transition-property: transform;
             transition-duration: 2s;
             transition-timing-function: cubic-bezier(.2,.1,.2,1);
             transition-delay: 3s;
           }
-          &.sld00{
-            transform: translate3d(0,0,0);
-          }
-          &.sld01{
+          &.sld0{
             transform: translate3d(-20%,0,0);
           }
-          &.sld02{
+          &.sld1{
             transform: translate3d(-40%,0,0);
           }
-          &.sld03{
+          &.sld2{
             transform: translate3d(-60%,0,0);
           }
-          &.sld04{
+          &.sld3{
             transform: translate3d(-80%,0,0);
           }
-          &.sld05{
+          &.sld4{
             transform: translate3d(-100%,0,0);
           }
           li{
@@ -1074,4 +1072,3 @@ footer{
 .trs05{
   transform: translate3d(-100%,0,0);
 }
-

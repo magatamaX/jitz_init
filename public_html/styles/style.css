@@ -288,6 +288,8 @@ header#header {
         height: auto;
         position: relative; }
         #contents .main-contents #main-slide .main-slide-area .slides.active {
+          -webkit-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
           -webkit-transition-property: -webkit-transform;
           transition-property: -webkit-transform;
           transition-property: transform;
@@ -298,22 +300,19 @@ header#header {
                   transition-timing-function: cubic-bezier(0.2, 0.1, 0.2, 1);
           -webkit-transition-delay: 3s;
                   transition-delay: 3s; }
-        #contents .main-contents #main-slide .main-slide-area .slides.sld00 {
-          -webkit-transform: translate3d(0, 0, 0);
-                  transform: translate3d(0, 0, 0); }
-        #contents .main-contents #main-slide .main-slide-area .slides.sld01 {
+        #contents .main-contents #main-slide .main-slide-area .slides.sld0 {
           -webkit-transform: translate3d(-20%, 0, 0);
                   transform: translate3d(-20%, 0, 0); }
-        #contents .main-contents #main-slide .main-slide-area .slides.sld02 {
+        #contents .main-contents #main-slide .main-slide-area .slides.sld1 {
           -webkit-transform: translate3d(-40%, 0, 0);
                   transform: translate3d(-40%, 0, 0); }
-        #contents .main-contents #main-slide .main-slide-area .slides.sld03 {
+        #contents .main-contents #main-slide .main-slide-area .slides.sld2 {
           -webkit-transform: translate3d(-60%, 0, 0);
                   transform: translate3d(-60%, 0, 0); }
-        #contents .main-contents #main-slide .main-slide-area .slides.sld04 {
+        #contents .main-contents #main-slide .main-slide-area .slides.sld3 {
           -webkit-transform: translate3d(-80%, 0, 0);
                   transform: translate3d(-80%, 0, 0); }
-        #contents .main-contents #main-slide .main-slide-area .slides.sld05 {
+        #contents .main-contents #main-slide .main-slide-area .slides.sld4 {
           -webkit-transform: translate3d(-100%, 0, 0);
                   transform: translate3d(-100%, 0, 0); }
         #contents .main-contents #main-slide .main-slide-area .slides li {
