@@ -16,11 +16,11 @@
 
   var n = 0;
 
-  elm.addEventListener("transitionend", function () {
+  elm.addEventListener("transitionend", function (e) {
 
-    // console.log('アニメーション終わりました');
-    // console.log(n);
-    // console.log(slides.length);
+    console.log('アニメーション終わりました');
+    console.log(n);
+    console.log(slides.length);
 
     if (n < slides.length - 1) {
       n++;

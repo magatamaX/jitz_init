@@ -37,7 +37,8 @@ header{
   &#header{
     border-bottom: 2px solid $mainColor;
     .top{
-      background: #efefef;
+      background: $mainColor;
+      color: #fff;
       .top-contents{
         width: 1080px;
         @include mq(){
@@ -51,7 +52,7 @@ header{
         justify-content: space-between;
         box-sizing: border-box;
         position: relative;
-        padding: 10px 0;
+        padding: 5px 0;
         .top-desc{
           @include mq(){
             font-size: 12px;
@@ -63,12 +64,13 @@ header{
           }
           li{
             display: inline-block;
-            padding: 0 20px;
-            border-left: 1px solid #666;
+            padding: 0 10px;
+            font-size: 12px;
             &:first-child{
               border-left: none;
             }
             a{
+              color: #fff;
               &:hover{
                 text-decoration: underline;
               }
@@ -88,15 +90,29 @@ header{
         max-width: 1080px;
         display: block;
       }
-      h1{
+      .main-title{
         display: table-cell;
-        vertical-align: bottom;
+        vertical-align: middle;
         width: 240px;
-        padding-right: 40px;
-        img{
-          display: block;
-          width: 100%;
-          height: auto;
+        h1 {
+          line-height: 1;
+          a{
+            display: block;
+            font-size: 44px;
+            font-weight: bold;
+            color: $mainColor;
+            span{
+              color: #efb400;
+            }
+          }
+        }
+        p {
+          font-size: 12px;
+          background: $mainColor;
+          color: #fff;
+          text-align: center;
+          border-radius: 12px;
+          line-height: 1.8;
         }
       }
       .search{
@@ -147,28 +163,128 @@ header{
       #page-navi{
         display: table-cell;
         width: 100%;
-        vertical-align: bottom;
+        vertical-align: middle;
         @include mq(lg){
           display: none;
         }
-        ul{
+        &>ul{
           width: 100%;
-          overflow: hidden;
           text-align: right;
-          li{
-            display: inline-block;
-            width: 106px;
-            border-right: 2px solid $mainColor;
-            &:first-child{
-              border-left: 2px solid $mainColor;
+          letter-spacing: -0.04em;
+          &>li{
+            .page-navi-inner-wrap{
+              display: none;
             }
-            a{
+            position: relative;
+            display: inline-block;
+            width: 110px;
+            letter-spacing: normal;
+            border-right: 1px solid $mainColor;
+            &:first-child{
+              border-left: 1px solid $mainColor;
+            }
+            &>a{
               display: block;
               width: 100%;
               text-align: center;
-              padding: 5px 0;
+              line-height: 44px;
               font-size: 16px;
-              font-weight: bold;
+              color: $mainColor;
+            }
+            &.hover{
+              .page-navi-inner-wrap{
+                display: block;
+              }
+              &>a{
+                background: $mainColor;
+                color: #fff;
+                &:after{
+                  content: '';
+                  position: absolute;
+                  bottom: -10px;
+                  left: 50%;
+                  margin-left: -10px;
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-width: 10px 10px 0 10px;
+                  border-color: $mainColor transparent transparent transparent;
+
+                }
+              }
+            }
+          }
+        }
+        .page-navi-inner-wrap{
+          position: fixed;
+          top: 115px;
+          left: 0;
+          width: 100%;
+          z-index: 100;
+          background-color: #fff;
+          box-shadow: 1px 2px 8px #666;
+          .page-navi-inner{
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: table;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: left;
+            &>.page-navi-inner-recommend,
+            &>.page-navi-inner-new{
+              display: table-cell;
+              vertical-align: top;
+            }
+            &>.page-navi-inner-recommend {
+              width: 70%;
+              padding-right: 20px;
+              box-sizing: border-box;
+              &>ul{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                &>li{
+                  width: 31.3333%;
+                  margin-bottom: 20px;
+                  &>a{
+                    display: block;
+                    img{
+                      width: 100%;
+                      display: block;
+                      margin-bottom: 5px;
+                    }
+                    span{
+                      display: block;
+                    }
+                  }
+                }
+              }
+            }
+            &>.page-navi-inner-new {
+              width: 30%;
+              &>ul{
+                width: 100%;
+                &>li{
+                  margin-bottom: 20px;
+                  &>a{
+                    display: table;
+                    table-layout: fixed;
+                    img{
+                      width: 70px;
+                      display: table-cell;
+                      vertical-align: top;
+                      margin-right: 10px;
+                    }
+                    span{
+                      display: table-cell;
+                      vertical-align: top;
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -179,8 +295,9 @@ header{
 
 // breadCrumb
 #breadCrumb{
-  padding: 10px 0;
-  border-bottom: 1px solid $mainColor;
+  padding: 7px 0;
+  background: #efefef;
+  font-size: 12px;
   ul{
     width: 1080px;
     @include mq(){

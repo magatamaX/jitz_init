@@ -10,27 +10,14 @@ header#header
         li
           a(href="#") サイトマップ
   .header-contents
-    h1
-      a(href="/")
-        img(src="/images/common/main_title.png", alt="実務家Link.com")
-    .search
-      form
-        input(type="text" placeholder="記事を検索")
-        label.search-icon(for="search_button")
-          input(type="button" id="search_button")
-    nav#page-navi
-      ul
-        li
-          a(href="#") 法務
-        li
-          a(href="#") 税務
-        li
-          a(href="#") 労務
-        li
-          a(href="#") スキル
-        li
-          a(href="#") ビジネス
-        li
-          a(href="#") 基礎知識
-        li
-          a(href="#") 専門家コラム
+    .main-title
+      h1
+        a(href="/")
+          | 実務家
+          span Link
+    //- .search
+    //-   form
+    //-     input(type="text" placeholder="記事を検索")
+    //-     label.search-icon(for="search_button")
+    //-       input(type="button" id="search_button")
+    include header/navi/_navi
