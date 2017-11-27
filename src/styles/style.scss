@@ -35,7 +35,6 @@ body{
 // header
 header{
   &#header{
-    border-bottom: 2px solid $mainColor;
     .top{
       background: $mainColor;
       color: #fff;
@@ -80,8 +79,18 @@ header{
       }
     }
     .header-contents{
+      width: 100%;
+      background: rgba(255,255,255,0.85);
+      border-bottom: 2px solid $mainColor;
+      &.fixed{
+        position: fixed;
+        top:0;
+        z-index: 100;
+      }
+    }
+    .header-contents-inner{
       width: 1080px;
-      margin: 20px auto;
+      margin: 0 auto;
       display: table;
       table-layout: fixed;
       position: relative;
@@ -94,6 +103,7 @@ header{
         display: table-cell;
         vertical-align: middle;
         width: 240px;
+        padding: 15px 30px 15px 0;
         h1 {
           line-height: 1;
           a{
@@ -163,25 +173,28 @@ header{
       #page-navi{
         display: table-cell;
         width: 100%;
-        vertical-align: middle;
+        vertical-align: bottom;
         @include mq(lg){
           display: none;
         }
         &>ul{
           width: 100%;
-          text-align: right;
-          letter-spacing: -0.04em;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-between;
           &>li{
             .page-navi-inner-wrap{
               display: none;
             }
             position: relative;
-            display: inline-block;
-            width: 110px;
+            flex: 1;
             letter-spacing: normal;
-            border-right: 1px solid $mainColor;
+            padding-bottom: 15px;
             &:first-child{
-              border-left: 1px solid $mainColor;
+              &>a{
+                border-left: 1px solid $mainColor;
+              }
             }
             &>a{
               display: block;
@@ -190,6 +203,7 @@ header{
               line-height: 44px;
               font-size: 16px;
               color: $mainColor;
+              border-right: 1px solid $mainColor;
             }
             &.hover{
               .page-navi-inner-wrap{
@@ -201,7 +215,7 @@ header{
                 &:after{
                   content: '';
                   position: absolute;
-                  bottom: -10px;
+                  bottom: 5px;
                   left: 50%;
                   margin-left: -10px;
                   width: 0;

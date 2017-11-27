@@ -10,14 +10,15 @@ header#header
         li
           a(href="#") サイトマップ
   .header-contents
-    .main-title
-      h1
-        a(href="/")
-          | 実務家
-          span Link
-    //- .search
-    //-   form
-    //-     input(type="text" placeholder="記事を検索")
-    //-     label.search-icon(for="search_button")
-    //-       input(type="button" id="search_button")
-    include header/navi/_navi
+    .header-contents-inner
+      .main-title
+        h1
+          a(href="/")
+            | 実務家
+            span Link
+      //- .search
+      //-   form
+      //-     input(type="text" placeholder="記事を検索")
+      //-     label.search-icon(for="search_button")
+      //-       input(type="button" id="search_button")
+      include header/navi/_navi
