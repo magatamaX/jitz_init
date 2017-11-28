@@ -43,6 +43,7 @@ header{
         @include mq(){
           width: 100%;
           max-width: 1080px;
+          text-align: center;
         }
         margin: 0 auto;
         display: flex;
@@ -53,8 +54,12 @@ header{
         position: relative;
         padding: 5px 0;
         .top-desc{
-          @include mq(){
+          @include mq(lg){
             font-size: 12px;
+            width: 100%;
+          }
+          @include mq(sm){
+            font-size: 10px;
           }
         }
         .top-sitenavi{
@@ -104,6 +109,13 @@ header{
         vertical-align: middle;
         width: 240px;
         padding: 15px 30px 15px 0;
+        @include mq(){
+          display: block;
+          box-sizing: border-box;
+          width: 100%;
+          text-align: center;
+          padding: 10px 30px 10px 0;
+        }
         h1 {
           line-height: 1;
           a{
@@ -113,6 +125,14 @@ header{
             color: $mainColor;
             span{
               color: #efb400;
+            }
+            @include mq(lg){
+              font-size: 36px;
+              display: inline-block;
+            }
+            @include mq(sm){
+              font-size: 24px;
+
             }
           }
         }
@@ -353,6 +373,7 @@ header{
     width: auto;
     max-width: 1080px;
     display: block;
+    margin: 20px auto;
   }
   .main-contents{
     display: table-cell;

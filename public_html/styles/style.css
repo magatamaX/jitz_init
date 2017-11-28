@@ -133,10 +133,15 @@ header#header .top {
     @media screen and (max-width: 768px) {
       header#header .top .top-contents {
         width: 100%;
-        max-width: 1080px; } }
+        max-width: 1080px;
+        text-align: center; } }
     @media screen and (max-width: 768px) {
       header#header .top .top-contents .top-desc {
-        font-size: 12px; } }
+        font-size: 12px;
+        width: 100%; } }
+    @media screen and (max-width: 480px) {
+      header#header .top .top-contents .top-desc {
+        font-size: 10px; } }
     @media screen and (max-width: 768px) {
       header#header .top .top-contents .top-sitenavi {
         display: none; } }
@@ -176,6 +181,14 @@ header#header .header-contents-inner {
     vertical-align: middle;
     width: 240px;
     padding: 15px 30px 15px 0; }
+    @media screen and (max-width: 768px) {
+      header#header .header-contents-inner .main-title {
+        display: block;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        width: 100%;
+        text-align: center;
+        padding: 10px 30px 10px 0; } }
     header#header .header-contents-inner .main-title h1 {
       line-height: 1; }
       header#header .header-contents-inner .main-title h1 a {
@@ -185,6 +198,13 @@ header#header .header-contents-inner {
         color: #2E8622; }
         header#header .header-contents-inner .main-title h1 a span {
           color: #efb400; }
+        @media screen and (max-width: 768px) {
+          header#header .header-contents-inner .main-title h1 a {
+            font-size: 36px;
+            display: inline-block; } }
+        @media screen and (max-width: 480px) {
+          header#header .header-contents-inner .main-title h1 a {
+            font-size: 24px; } }
     header#header .header-contents-inner .main-title p {
       font-size: 12px;
       background: #2E8622;
@@ -392,7 +412,8 @@ header#header .header-contents-inner {
     #contents {
       width: auto;
       max-width: 1080px;
-      display: block; } }
+      display: block;
+      margin: 20px auto; } }
   #contents .main-contents {
     display: table-cell;
     vertical-align: top;
