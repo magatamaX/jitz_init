@@ -4,45 +4,89 @@
 (function () {
 
   if (document.getElementById('top-page')) {
+    var slideNext = function slideNext() {
+      currentSlideOrder = slides.querySelectorAll('li');
+      console.log(currentSlideOrder);
+      slides.classList.add('sliding-next');
+    };
 
-    var elm = document.getElementById('main-slide').querySelector('.slides');
-    var elm1 = elm.firstElementChild;
-    var elm1Clone = elm1.cloneNode(true);
-    var elm5 = elm.lastElementChild;
-    var ul = document.createElement('ul');
-    ul.classList.add('absbox');
-    var absbox = elm5.appendChild(ul);
-    absbox.appendChild(elm1Clone);
+    var slidePrev = function slidePrev() {
+      currentSlideOrder = slides.querySelectorAll('li');
+      console.log(currentSlideOrder);
+      slides.classList.add('sliding-prev');
+    };
 
-    var slides = elm.children;
-    console.log(slides);
-    console.log(slides.length);
+    // 自動スライド送り
+    var autoPlay = function autoPlay(interval) {
+      console.log('autoplayによってslidenextされました。');
+      slideNext();
+      clearTimeout(timerID);
+      timerID = setTimeout(function () {
+        autoPlay(interval);
+      }, interval);
+    };
 
-    var n = 0;
+    var slides = document.getElementById('slides');
+    var slidesBtn = document.getElementById('main-slide-btn');
+    var clonedList = slides.querySelector('[data-clonedlist]');
+    var timerID = void 0;
 
-    elm.addEventListener("transitionend", function (e) {
+    // 最後のスライドを一番前に移動する
+    slides.insertBefore(clonedList, slides.firstElementChild);
 
-      console.log('アニメーション終わりました');
-      console.log(n);
-      console.log(slides.length);
+    var currentSlideOrder = void 0;
+    var clickableFlag = true;
 
-      if (n < slides.length - 1) {
-        n++;
-      } else {
-        elm.classList.remove('sld0');
-        elm.classList.remove('sld1');
-        elm.classList.remove('sld2');
-        elm.classList.remove('sld3');
-        elm.classList.remove('sld4');
-        n = 0;
+    slidesBtn.addEventListener('click', function (e) {
+      // 前後送りボタンを押したとき
+      if (clickableFlag) {
+
+        clearTimeout(timerID);
+
+        if (e.target.className === 'slide-next') {
+          console.log('NEXTボタンをクリックしました。');
+
+          slideNext();
+        } else if (e.target.className === 'slide-prev') {
+          console.log('PREVボタンをクリックしました');
+
+          slidePrev();
+        }
+
+        timerID = setTimeout(function () {
+          autoPlay(5000);
+        }, 8000);
+        return false;
       }
+    });
+    // アニメーションスタート時
+    slides.addEventListener('animationstart', function () {
+      console.log('アニメーション開始！');
+      clickableFlag = false;
+    });
+    // アニメーション終了時（送り種類で分ける）
+    slides.addEventListener('animationend', function (animation) {
+      console.log('アニメーション終了！');
+      clickableFlag = true;
 
-      elm.classList.add('sld' + n);
+      if (animation.animationName === 'slidenext') {
+        console.log('送りアニメーションです。');
+
+        slides.appendChild(currentSlideOrder[0]);
+        slides.classList.remove('sliding-next');
+        currentSlideOrder;
+      } else if (animation.animationName === 'slideprev') {
+        console.log('戻りアニメーションです。');
+
+        slides.insertBefore(currentSlideOrder[currentSlideOrder.length - 1], slides.firstElementChild);
+        slides.classList.remove('sliding-prev');
+        currentSlideOrder;
+      }
     });
 
-    window.addEventListener('load', function () {
-      elm.classList.add('sld0');
-    });
+    timerID = setTimeout(function () {
+      autoPlay(5000);
+    }, 5000);
   }
 })();
 // スティッキーヘッダ
@@ -62,9 +106,9 @@
   });
   window.addEventListener('scroll', function () {
 
-    var scrollTop = document.documentElement.scrollTop;
+    var scrollTopPoint = document.scrollingElement.scrollTop;
 
-    if (scrollTop >= toFixedPoint) {
+    if (scrollTopPoint >= toFixedPoint) {
       // ヘッダーコンテンツがFixedになるとき
       targetElement.classList.add('fixed');
       document.getElementById('contents').style.paddingTop = hHeight + 'px';
@@ -76,7 +120,7 @@
       targetElement.classList.remove('fixed');
       document.getElementById('contents').style.paddingTop = '0px';
       for (var _i = 0; _i < pageNaviInner.length; _i++) {
-        pageNaviInner[_i].style.top = hHeight + (raisingHeight - scrollTop) + 'px';
+        pageNaviInner[_i].style.top = hHeight + (raisingHeight - scrollTopPoint) + 'px';
       }
     }
   });
@@ -85,16 +129,44 @@
 (function () {
 
   var targetElement = document.getElementById('page-navi');
-  var hoveringTargets = targetElement.querySelectorAll(':scope > ul > li');
+  var hoveringTargets = document.querySelectorAll('#page-navi > ul > li');
 
-  console.log(hoveringTargets);
+  // console.log(hoveringTargets);
 
-  for (var i = 0; i < hoveringTargets.length; i++) {
+  var _loop = function _loop(i) {
     hoveringTargets[i].addEventListener('mouseover', function () {
-      this.classList.add('hover');
+      hoveringTargets[i].classList.add('hover');
     });
     hoveringTargets[i].addEventListener('mouseout', function () {
-      this.classList.remove('hover');
+      hoveringTargets[i].classList.remove('hover');
     });
+  };
+
+  for (var i = 0; i < hoveringTargets.length; i++) {
+    _loop(i);
   }
+})();
+// ヘッダメニューボタンで表示切替（SP）
+(function () {
+
+  var toggleBtn = document.getElementById('navi-toggle-btn').querySelector('a');
+  console.log(toggleBtn);
+  var toggleTarget = document.getElementById('page-navi');
+
+  toggleBtn.addEventListener('click', function (e) {
+
+    e.preventDefault();
+
+    if (toggleTarget.classList.contains('active')) {
+
+      toggleTarget.classList.remove('active');
+
+      return false;
+    } else {
+
+      toggleTarget.classList.add('active');
+
+      return false;
+    }
+  });
 })();

@@ -1,33 +1,30 @@
 main(role="main")
   section#main-slide
     .main-slide-area
-      ul.slides.active.clearfix
-        li
+      ul#slides.slides.active.clearfix
+        li#slide00
           a(href="/article.html")
             img(src="/images/top/slides_01.jpg", alt="「ランニング命！」が挫折の根本要因？")
             span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
-        li
+        li#slide01
           a(href="#article02")
             img(src="http://via.placeholder.com/730x425/cc00cc/fff/?text=slide02", alt="「ランニング命！」が挫折の根本要因？")
             span 「ウォーキング命！」が破滅の根本要因？ 休むウォーカーがやらなくてはいけない8つのこと
-        li
+        li#slide02
           a(href="#article03")
             img(src="http://via.placeholder.com/730x425/a2e6fb/fff/?text=slide03", alt="「ランニング命！」が挫折の根本要因？")
             span 「リスニング命！」が病気の間接要因？ 寝るリスナーがやってみてもいい2つのこと
-        li
+        li#slide03
           a(href="#article04")
             img(src="http://via.placeholder.com/730x425/ffc8e2/fff/?text=slide04", alt="「ランニング命！」が挫折の根本要因？")
             span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
-        li
+        li#slide04(data-clonedlist)
           a(href="#article05")
             img(src="http://via.placeholder.com/730x425/e2ffc8/fff/?text=slide05", alt="「ランニング命！」が挫折の根本要因？")
             span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
-          //- .absbox
-          //-   ul
-          //-     li
-          //-       a(href="#")
-          //-         img(src="/images/top/slides_01.jpg", alt="「ランニング命！」が挫折の根本要因？")
-          //-         span 「ランニング命！」が挫折の根本要因？ 働くランナーがやってはいけない5つのこと
+      #main-slide-btn
+        a.slide-prev(href="#") 前へ
+        a.slide-next(href="#") 次へ
   section#recommend
     include ../_recommend
   section#new

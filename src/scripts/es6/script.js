@@ -3,50 +3,104 @@
 
 if( document.getElementById('top-page')){
 
-  const elm = document.getElementById('main-slide').querySelector('.slides');
-  const elm1 = elm.firstElementChild;
-  const elm1Clone = elm1.cloneNode(true);
-  const elm5 = elm.lastElementChild;
-  const ul = document.createElement('ul');
-  ul.classList.add('absbox');
-  const absbox = elm5.appendChild(ul);
-  absbox.appendChild(elm1Clone);
+      const slides = document.getElementById('slides');
+      const slidesBtn = document.getElementById('main-slide-btn');
+      const clonedList = slides.querySelector('[data-clonedlist]');
+      let timerID;
 
-  const slides = elm.children;
-  console.log(slides);
-  console.log(slides.length);
+      // 最後のスライドを一番前に移動する
+      slides.insertBefore(clonedList, slides.firstElementChild);
 
-  let n = 0;
+    let currentSlideOrder;
+    let clickableFlag = true;
 
-  elm.addEventListener("transitionend", function(e){
-
-
-    console.log('アニメーション終わりました');
-    console.log(n);
-    console.log(slides.length);
-
-
-
-    if ( n < slides.length-1 ){
-      n++;
-    } else {
-      elm.classList.remove('sld0');
-      elm.classList.remove('sld1');
-      elm.classList.remove('sld2');
-      elm.classList.remove('sld3');
-      elm.classList.remove('sld4');
-      n = 0;
+    function slideNext(){
+      currentSlideOrder = slides.querySelectorAll('li');
+      console.log(currentSlideOrder);
+      slides.classList.add('sliding-next');
+    }
+    function slidePrev(){
+      currentSlideOrder = slides.querySelectorAll('li');
+      console.log(currentSlideOrder);
+      slides.classList.add('sliding-prev');
     }
 
-    elm.classList.add('sld'+n);
+
+    slidesBtn.addEventListener('click', (e) => {
+    // 前後送りボタンを押したとき
+    if(clickableFlag){
+
+      clearTimeout(timerID);
+
+        if( e.target.className === 'slide-next'){
+          console.log('NEXTボタンをクリックしました。');
+
+            slideNext();
 
 
-  });
+        } else if ( e.target.className === 'slide-prev'){
+          console.log('PREVボタンをクリックしました');
 
-  window.addEventListener('load', () => {
-    elm.classList.add('sld0');
-  });
+            slidePrev();
 
+        }
+
+      timerID = setTimeout(() => {
+        autoPlay( 5000 );
+        },
+        8000
+      );
+      return false;
+
+    }
+
+    });
+    // アニメーションスタート時
+    slides.addEventListener('animationstart', () => {
+      console.log('アニメーション開始！');
+      clickableFlag = false;
+
+    });
+    // アニメーション終了時（送り種類で分ける）
+    slides.addEventListener('animationend', (animation) => {
+      console.log('アニメーション終了！');
+      clickableFlag = true;
+
+      if (animation.animationName === 'slidenext'){
+        console.log('送りアニメーションです。');
+
+            slides.appendChild(currentSlideOrder[0]);
+            slides.classList.remove('sliding-next');
+            currentSlideOrder;
+
+      } else if (animation.animationName === 'slideprev'){
+        console.log('戻りアニメーションです。');
+
+            slides.insertBefore(currentSlideOrder[currentSlideOrder.length-1], slides.firstElementChild);
+            slides.classList.remove('sliding-prev');
+            currentSlideOrder;
+
+      }
+
+    });
+
+    // 自動スライド送り
+    function autoPlay( interval ){
+      console.log('autoplayによってslidenextされました。');
+      slideNext();
+      clearTimeout(timerID);
+      timerID = setTimeout(() => {
+        autoPlay( interval );
+        },
+        interval
+      );
+    }
+
+    timerID = setTimeout(() => {
+      autoPlay( 5000 );
+      },
+      5000
+    );
 
 }
 })();
@@ -68,9 +122,9 @@ window.addEventListener('load', () => {
 });
 window.addEventListener('scroll', () => {
 
-  const scrollTop = document.documentElement.scrollTop;
+  let scrollTopPoint = document.scrollingElement.scrollTop;
 
-  if ( scrollTop >= toFixedPoint ){
+  if ( scrollTopPoint >= toFixedPoint ){
     // ヘッダーコンテンツがFixedになるとき
     targetElement.classList.add('fixed');
     document.getElementById('contents').style.paddingTop = hHeight + 'px';
@@ -83,7 +137,7 @@ window.addEventListener('scroll', () => {
     targetElement.classList.remove('fixed');
     document.getElementById('contents').style.paddingTop = '0px';
     for ( let i=0; i<pageNaviInner.length; i++ ){
-      pageNaviInner[i].style.top = hHeight + (raisingHeight - scrollTop) + 'px';
+      pageNaviInner[i].style.top = hHeight + (raisingHeight - scrollTopPoint) + 'px';
     }
   }
 
@@ -94,18 +148,45 @@ window.addEventListener('scroll', () => {
 (function(){
 
 const targetElement = document.getElementById('page-navi');
-const hoveringTargets = targetElement.querySelectorAll(':scope > ul > li');
+const hoveringTargets = document.querySelectorAll('#page-navi > ul > li');
 
-console.log(hoveringTargets);
+// console.log(hoveringTargets);
 
 for ( let i=0; i < hoveringTargets.length; i++ ){
-  hoveringTargets[i].addEventListener('mouseover', function(){
-    this.classList.add('hover');
+  hoveringTargets[i].addEventListener('mouseover', () => {
+    hoveringTargets[i].classList.add('hover');
   });
-  hoveringTargets[i].addEventListener('mouseout', function(){
-    this.classList.remove('hover');
+  hoveringTargets[i].addEventListener('mouseout', () => {
+    hoveringTargets[i].classList.remove('hover');
   });
 
 }
+
+})();
+// ヘッダメニューボタンで表示切替（SP）
+(function(){
+
+  const toggleBtn = document.getElementById('navi-toggle-btn').querySelector('a');
+  console.log(toggleBtn);
+  const toggleTarget = document.getElementById('page-navi');
+
+  toggleBtn.addEventListener('click', function(e){
+
+    e.preventDefault();
+
+    if ( toggleTarget.classList.contains('active')){
+
+      toggleTarget.classList.remove('active');
+
+      return false;
+
+    } else {
+
+      toggleTarget.classList.add('active');
+
+return false;
+    }
+
+  });
 
 })();
