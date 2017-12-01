@@ -1,0 +1,32 @@
+doctype html
+html(lang="ja")
+  head
+    include ../../inc/_meta
+    // OGP
+    // /OGP
+    title 色がつく地名の近くに金銀銅山あり!? | 実務家Link
+    //- link(rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css")
+    link(rel="stylesheet" href="/styles/style.css")
+  body
+    // ヘッダー
+    include ../../inc/_header
+    // /ヘッダー
+    // パンくず
+    #breadCrumb
+      ul
+        li
+          a(href="") ホーム
+        li
+          a(href="") ビジネス
+        li.current
+          span 色がつく地名の近くに金銀銅山あり!?
+    #contents.clearfix
+      // メインコンテンツ
+      .main-contents
+        include ../../inc/article/_article06
+      // サイドコンテンツ
+      .side-contents
+        include ../../inc/_side
+    // /contents
+    include ../../inc/_footer
+    script(type="text/javascript", src="/scripts/script.js")

@@ -1,0 +1,32 @@
+doctype html
+html(lang="ja")
+  head
+    include ../../inc/_meta
+    // OGP
+    // /OGP
+    title 中小企業は規模より&quot;質&quot;で勝負！(1) | 実務家Link
+    //- link(rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css")
+    link(rel="stylesheet" href="/styles/style.css")
+  body
+    // ヘッダー
+    include ../../inc/_header
+    // /ヘッダー
+    // パンくず
+    #breadCrumb
+      ul
+        li
+          a(href="") ホーム
+        li
+          a(href="") 法務
+        li.current
+          span 中小企業は規模より&quot;質&quot;で勝負！(1)
+    #contents.clearfix
+      // メインコンテンツ
+      .main-contents
+        include ../../inc/article/_article01
+      // サイドコンテンツ
+      .side-contents
+        include ../../inc/_side
+    // /contents
+    include ../../inc/_footer
+    script(type="text/javascript", src="/scripts/script.js")

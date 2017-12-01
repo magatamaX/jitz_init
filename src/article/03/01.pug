@@ -1,0 +1,32 @@
+doctype html
+html(lang="ja")
+  head
+    include ../../inc/_meta
+    // OGP
+    // /OGP
+    title 黄金の国ジパングは本当だった！金の産地を示す地名 | 実務家Link
+    //- link(rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css")
+    link(rel="stylesheet" href="/styles/style.css")
+  body
+    // ヘッダー
+    include ../../inc/_header
+    // /ヘッダー
+    // パンくず
+    #breadCrumb
+      ul
+        li
+          a(href="") ホーム
+        li
+          a(href="") 専門家コラム
+        li.current
+          span 黄金の国ジパングは本当だった！金の産地を示す地名
+    #contents.clearfix
+      // メインコンテンツ
+      .main-contents
+        include ../../inc/article/_article05
+      // サイドコンテンツ
+      .side-contents
+        include ../../inc/_side
+    // /contents
+    include ../../inc/_footer
+    script(type="text/javascript", src="/scripts/script.js")
